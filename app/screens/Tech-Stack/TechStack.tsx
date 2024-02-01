@@ -46,7 +46,7 @@ const Item = <T extends ItemI>({
 
 const TechStack = () => {
 	return (
-		<article id='tech-stack' className='tech-stack scroll-m-56 w-full h-fit'>
+		<article id='tech-stack' className='tech-stack scroll-m-56 w-full h-auto'>
 			<section className='tech-stack-content w-full h-full flex justify-center items-center gap-5'>
 				<div className='tech-stack-icons flex justify-around items-center flex-col'>
 					<h1 className='lg:text-6xl text-xl  font-semibold'>Techs</h1>
