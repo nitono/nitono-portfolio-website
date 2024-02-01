@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.word {
+		@apply text-3xl lg:text-6xl font-mono;
+	}
+	.letter {
+		display: inline-block;
+		animation: wave 4s ease-in-out infinite;
+		animation-delay: calc(0.2s * var(--d));
+		font-family: 'Code' !important;
+	}
+}
+@font-face {
+	font-family: 'Code';
+	src: url('/OperatorMono-BoldItalic.otf');
+}
+
+@keyframes wave {
+	0% {
+		transform: translateY(0px);
+	}
+	30% {
+		transform: translateY(-20px);
+	}
+	60%,
+	100% {
+		transform: translateY(0px);
+	}
+}
