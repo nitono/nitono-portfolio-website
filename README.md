@@ -11,4 +11,4 @@
 
 ## Features
 
-- **GraphQL** api
+- **GraphQL** server and client with Github API
