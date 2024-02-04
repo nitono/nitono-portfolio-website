@@ -1,4 +1,4 @@
-# Nitono Portfolio Website
+# Nitono Portfolio Website (v2)
 
 [https://nitono-portfolio.vercel.app](https://nitono-portfolio.vercel.app)
 
@@ -8,3 +8,7 @@
 - **octokit** for use the github graphql api
 - **Framer Motion** for animate website components
 - **Tailwind CSS** for styling website
+
+## Features
+
+- **GraphQL** api
