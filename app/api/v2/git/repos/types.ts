@@ -1,4 +1,4 @@
-type Nullable<T> = null | T
+import { Nullable } from '../types'
 
 export type Collaborator = {
 	node: {
