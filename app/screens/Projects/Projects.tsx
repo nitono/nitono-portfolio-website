@@ -1,8 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
-import { Collaborator, GraphQLResult, Repo } from '@/app/api/git/types'
-import getGithubData from '@/app/lib/getGithubData'
+
+import { Collaborator, GraphQLResult, Repo } from '@/app/api/v2/git/repos/types'
+import { ApolloClient, InMemoryCache } from '@apollo/client'
 import { motion } from 'framer-motion'
+import gql from 'graphql-tag'
 import { FC, useEffect, useState } from 'react'
 import { FaStar } from 'react-icons/fa6'
 import { v4 } from 'uuid'
@@ -21,6 +23,7 @@ const Item: FC<ProjectItemProps> = ({ repo }) => {
 		createdAt,
 		collaborators,
 		stargazerCount,
+		defaultBranchRef,
 	} = repo.node
 
 	return (
@@ -28,7 +31,9 @@ const Item: FC<ProjectItemProps> = ({ repo }) => {
 			whileHover={{
 				scale: 1.01,
 			}}
-			onClick={() => window.location.assign(url)}
+			onClick={() => {
+				window.location.assign(url)
+			}}
 			className='project cursor-pointer lg:h-[300px] h-fit dark:bg-zinc-900 dark:text-zinc-300 bg-zinc-300 text-zinc-600 font-code rounded-lg flex justify-around items-center flex-col lg:p-2 p-2 w-[90vw] lg:w-[400px]'
 		>
 			<div className='project-info flex justify-around items-start flex-col'>
@@ -117,9 +122,58 @@ const Projects = () => {
 	})
 
 	const processData = () => {
-		getGithubData('nitono').then(res => {
-			setRepos(res.data as GraphQLResult)
+		const client = new ApolloClient({
+			uri: '/api/v2/git/repos',
+			cache: new InMemoryCache(),
 		})
+		client
+			.query({
+				query: gql`
+					query {
+						repos(userName: "nitono") {
+							user {
+								repositories {
+									edges {
+										node {
+											name
+											url
+											description
+											defaultBranchRef {
+												name
+											}
+											collaborators {
+												edges {
+													node {
+														name
+														avatarUrl
+														url
+													}
+												}
+											}
+											stargazerCount
+											createdAt
+											forkingAllowed
+											forks {
+												edges {
+													node {
+														name
+														url
+													}
+												}
+											}
+											latestRelease {
+												name
+												url
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				`,
+			})
+			.then(result => setRepos(result.data.repos as GraphQLResult))
 	}
 	useEffect(() => processData(), [])
 

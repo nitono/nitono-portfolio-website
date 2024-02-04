@@ -12,6 +12,9 @@ export type Repo = {
 	node: {
 		name: string
 		url: string
+		defaultBranchRef: {
+			name: string
+		}
 		description: Nullable<string>
 		collaborators: {
 			edges: Collaborator[]
@@ -44,4 +47,11 @@ export type GraphQLResult = {
 			edges: Repo[]
 		}>
 	}
+}
+
+export type ArgsType = {
+	name: string
+}
+export type ReposArgsType = {
+	userName: string
 }
