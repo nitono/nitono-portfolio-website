@@ -1,5 +1,7 @@
 # Nitono Portfolio Website (v2)
 
+<img src="./public/dark_logo.svg" style='width:100vw' alt='logo'/>
+
 [https://nitono-portfolio.vercel.app](https://nitono-portfolio.vercel.app)
 
 ## I am use this tack for project
