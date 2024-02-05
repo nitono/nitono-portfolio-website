@@ -23,7 +23,7 @@
 }
 
 h1 {
-	@apply before:content-['#'] before:mr-1 before:text-zinc-400 before:font-semibold !important;
+	@apply before:font-semibold !important;
 }
 
 a {
