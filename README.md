@@ -12,3 +12,4 @@
 ## Features
 
 - **GraphQL** server and client with Github API
+- **Glassmorphic** design
