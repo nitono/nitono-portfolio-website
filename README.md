@@ -11,7 +11,6 @@
 - **Framer Motion** for animate website components
 - **Tailwind CSS** for styling website
 
-## Features
+## Design
 
-- **GraphQL** server and client with Github API
-- **Glassmorphic** design
+<!-- from figma file -->
