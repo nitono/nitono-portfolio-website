@@ -32,7 +32,7 @@ export const Item = ({ link, title }: LinksItem) => {
 
 const Header = () => {
 	return (
-		<nav className='navigation z-50 top-3 sticky flex justify-center items-center lg:justify-between lg:items-center w-full h-10 lg:h-[50px] bg-Neutral-Neutral(700)/60 lg:p-2 rounded-xl text-Neutral-100 gap-4 lg:gap-4 transition-all text-Neutral-Neutral(100)'>
+		<nav className='navigation z-50 top-3 fixed flex justify-center items-center lg:justify-between lg:items-center w-[91%] h-10 lg:h-[50px] bg-Neutral-Neutral(700)/60 lg:p-2 rounded-xl text-Neutral-100 gap-4 lg:gap-4 transition-all text-Neutral-Neutral(100)'>
 			<header className='title-box flex justify-around gap-4 items-center'>
 				<h1 className={`title-text text-xl ${majormono.className} lg:text-xl `}>
 					Nitono
