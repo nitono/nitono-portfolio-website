@@ -1,14 +1,13 @@
-import { Dispatch, FC, SetStateAction } from 'react'
-import { FaMoon, FaSun } from 'react-icons/fa'
+import { AppContext } from '@/app/context'
+import { useContext } from 'react'
+import { IoMoon, IoSunny } from 'react-icons/io5'
 
-interface ThemeButtonProps {
-	theme: 'dark' | 'light'
-	setTheme: Dispatch<SetStateAction<'dark' | 'light'>>
-}
-const ThemeButton: FC<ThemeButtonProps> = ({ setTheme, theme }) => {
+const ThemeButton = () => {
+	const { setTheme, theme } = useContext(AppContext)
+
 	return (
 		<div
-			className='bg-violet-600  text-yellow-300 dark:text-violet-600  dark:bg-yellow-300 p-1 lg:p-2 rounded-md'
+			className='p-1 w-[25px] flex justify-center items-center h-[25px] rounded-md'
 			onClick={() => {
 				if (theme === 'dark') {
 					setTheme('light')
@@ -19,7 +18,11 @@ const ThemeButton: FC<ThemeButtonProps> = ({ setTheme, theme }) => {
 				}
 			}}
 		>
-			{theme === 'dark' ? <FaSun className='' /> : <FaMoon />}
+			{theme === 'dark' ? (
+				<IoSunny className='text-Primary-Primary(100) w-[22px] h-[22px]' />
+			) : (
+				<IoMoon className='text-Secondary-Secondary(100) w-[22px] h-[22px]' />
+			)}
 		</div>
 	)
 }

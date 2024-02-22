@@ -1,32 +1,28 @@
 export interface LinksItem {
-	index: string
 	title: string
 	link: string
 }
 
 export const LINKS: LinksItem[] = [
 	{
-		index: '0',
-		title: 'Home',
+		title: `<svg width='18px' viewBox="0 0 55 67"  xmlns="http://www.w3.org/2000/svg">
+		<path d="M0.472754 66.904L0.472754 0.0879963H4.21675L50.8728 45.496V0.0879963H54.4248V66.904H0.472754Z" />
+		</svg>`,
 		link: '#home',
 	},
 	{
-		index: '1',
 		title: 'About',
 		link: '#about',
 	},
 	{
-		index: '2',
 		title: 'Tech Stack',
 		link: '#tech-stack',
 	},
 	{
-		index: '3',
 		title: 'Projects',
 		link: '#projects',
 	},
 	{
-		index: '4',
 		title: 'Contacts',
 		link: '#contacts',
 	},

@@ -3,15 +3,18 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
 
+a {
+	text-decoration: none;
+}
+
 * {
 	scroll-behavior: smooth;
 	transition: all 0.3s easy-in-out;
-	-webkit-backface-visibility: hidden;
 }
 
 @layer components {
 	.code {
-		@apply text-zinc-900 p-4 rounded-lg lg:text-4xl lg:w-[600px] dark:text-zinc-200 w-screen;
+		@apply text-Neutral-Neutral(800) p-4 rounded-lg lg:text-4xl lg:w-[600px] dark:text-Neutral-Neutral(100) w-screen;
 	}
 }
 @layer base {
@@ -20,15 +23,23 @@
 		src: url('/OperatorMono-BoldItalic.otf') format('otf');
 		font-display: swap;
 	}
+	a {
+		@apply opacity-70 transition-all hover:text-Primary-Primary(100);
+	}
+	a:hover {
+		transition: all 0.15s ease-in-out;
+		text-decoration: underline 2px rgb(34 110 165) !important;
+	}
 }
 
-h1 {
-	@apply before:font-semibold !important;
-}
-
-a {
-	@apply hover:text-violet-500 underline transition-all before:content-['[']  before:text-zinc-400  after:text-zinc-400 after:content-[']'];
-}
 body::-webkit-scrollbar {
 	display: none;
+}
+.main-content {
+	background-image: linear-gradient(to right, #80808030 1px, transparent 1px),
+		linear-gradient(to bottom, #80808030 1px, transparent 1px);
+	background-size: 24px 24px;
+}
+.navigation {
+	backdrop-filter: blur(4px);
 }
