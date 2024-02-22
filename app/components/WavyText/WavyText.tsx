@@ -17,7 +17,7 @@ const WavyText: FC<WavyTextProps> = ({ children }) => {
 								<span
 									//@ts-ignore
 									style={{ '--d': i + 1 }}
-									className='letter font-mono'
+									className={`letter font-mono`}
 									key={i}
 								>
 									{c}

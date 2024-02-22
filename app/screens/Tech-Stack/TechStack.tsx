@@ -20,23 +20,24 @@ const Item = <T extends ItemI>({
 			whileHover={{
 				scale: 1.1,
 			}}
-			whileTap={{
-				scale: 0.9,
-			}}
 			key={uuid()}
-			className={`tech-item min-h-[120px] lg:min-h-[240px] h-fit flex justify-around flex-col cursor-pointer shadow-xl items-center gap-1 lg:p-2 bg-zinc-300 dark:bg-zinc-900 rounded-xl transition-all  ${className}`}
+			className={`tech-item min-h-[120px] lg:min-h-[240px] h-fit flex justify-around flex-col cursor-pointer shadow-xl items-center gap-1 lg:p-2 bg-opacity-20 backdrop-blur-lg bg-Neutral-Neutral(700) rounded-xl transition-all  ${className}`}
 		>
 			{<el.icon color={el.color} className={classN} key={uuid()} />}
 			{
 				<abbr
 					key={uuid()}
-					className={`font-bold dark:text-zinc-300 text-base lg:text-2xl`}
+					className={`font-bold dark:text-zinc-300 text-base lg:text-lg`}
 				>
 					{el.name}
 				</abbr>
 			}
 			{
-				<a href={el.url} className='text-zinc-600' target='_blank'>
+				<a
+					href={el.url}
+					className='text-Neutral-Neutral(100) hover:text-Primary-Primary(100) transition-all'
+					target='_blank'
+				>
 					More...
 				</a>
 			}
